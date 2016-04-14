@@ -1,0 +1,45 @@
+<h1>Jobs</h1>
+<table>
+    <tr>
+        <td> Type </td>
+        <td> Company </td>
+        <td> Logo </td>
+        <td> Url </td>
+        <td> Position </td>
+        <td> Location </td>
+        <td> Description </td>
+        <td> How_to_apply </td>
+        <td> Token </td>
+        <td> Is_public </td>
+        <td> Is_activated </td>
+        <td> Email </td>
+        <td> Expires_at </td>
+        <td> Created_at </td>
+        <td> Updated_at </td>
+    </tr>
+    {% for job in object_list %}
+    <tr>
+        <td> {{ job.ttype }}  </td>
+        <td> {{ job.company }}  </td>
+        <td> {{ job.logo }}  </td>
+        <td> {{ job.url }}  </td>
+        <td> {{ job.position }}  </td>
+        <td> {{ job.location }}  </td>
+        <td> {{ job.description }}  </td>
+        <td> {{ job.how_to_apply }}  </td>
+        <td> {{ job.token }}  </td>
+        <td> {{ job.is_public }}  </td>
+        <td> {{ job.is_activated }}  </td>
+        <td> {{ job.email }}  </td>
+        <td> {{ job.expires_at }}  </td>
+        <td> {{ job.created_at }}  </td>
+        <td> {{ job.updated_at }}  </td>
+        <td>
+        <a href="{% url "job_edit" job.id %}">edit</a>
+        <a href="{% url "job_delete" job.id %}">delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</ul>
+
+<a href="{% url "job_new" %}">New</a>
